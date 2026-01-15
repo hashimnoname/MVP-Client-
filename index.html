@@ -4,7 +4,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your customized chatbot // Catalog AI</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Your customized chatbot // High-Fidelity Catalog Discovery</title>
+    <meta name="title" content="Your customized chatbot // High-Fidelity Catalog Discovery" />
+    <meta name="description" content="Explore complex product catalogs through a neural conversational bridge. Experience the future of personalized discovery." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-customized-chatbot.vercel.app/" />
+    <meta property="og:title" content="Your customized chatbot // High-Fidelity Catalog Discovery" />
+    <meta property="og:description" content="Explore complex product catalogs through a neural conversational bridge." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=1200" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Your customized chatbot // High-Fidelity Catalog Discovery" />
+    <meta property="twitter:description" content="Explore complex product catalogs through a neural conversational bridge." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
@@ -23,6 +40,7 @@
               'float-slow': 'float 6s ease-in-out infinite',
               'scanline': 'scanline 8s linear infinite',
               'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+              'dot': 'dot 1.4s infinite ease-in-out',
             },
             keyframes: {
               liquid: {
@@ -33,6 +51,10 @@
               'pulse-soft': {
                 '0%, 100%': { opacity: '0.2' },
                 '50%': { opacity: '0.5' },
+              },
+              dot: {
+                '0%, 80%, 100%': { transform: 'scale(0)', opacity: '0.3' },
+                '40%': { transform: 'scale(1)', opacity: '1' },
               },
               float: {
                 '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
@@ -61,28 +83,22 @@
       }
 
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
         background: #020617;
       }
       ::-webkit-scrollbar-thumb {
-        background: rgba(59, 130, 246, 0.2);
+        background: rgba(59, 130, 246, 0.3);
         border-radius: 20px;
-        border: 2px solid transparent;
-        background-clip: content-box;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(59, 130, 246, 0.4);
-        background-clip: content-box;
       }
 
       .glass-card {
-        background: rgba(15, 23, 42, 0.7);
+        background: rgba(15, 23, 42, 0.75);
         backdrop-filter: blur(40px);
         -webkit-backdrop-filter: blur(40px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
       }
 
       .neo-button {
@@ -95,7 +111,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent);
         transform: translateX(-100%);
         transition: 0.6s;
       }
@@ -125,25 +141,25 @@
       }
 
       @keyframes message-pop {
-        0% { transform: translateY(15px) scale(0.95); opacity: 0; }
+        0% { transform: translateY(20px) scale(0.98); opacity: 0; }
         100% { transform: translateY(0) scale(1); opacity: 1; }
       }
-      .animate-message { animation: message-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .animate-message { animation: message-pop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       
       html { scroll-behavior: smooth; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.36.0"
-  }
-}
-</script>
-</head>
-  <body class="font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.36.0"
+      }
+    }
+    </script>
+  </head>
+  <body class="font-sans antialiased selection:bg-blue-600 selection:text-white">
     <div id="root"></div>
   </body>
 </html>

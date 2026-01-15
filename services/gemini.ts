@@ -7,6 +7,7 @@ export const getGeminiResponse = async (
   history: GeminiContent[],
   systemInstruction: string
 ) => {
+  // Always use the named parameter for API Key as per coding guidelines
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
   
   try {
@@ -24,6 +25,7 @@ export const getGeminiResponse = async (
       }
     });
 
+    // Extract text output using the .text property (not a method)
     return response.text || "";
   } catch (error) {
     console.error("Gemini API Error:", error);
